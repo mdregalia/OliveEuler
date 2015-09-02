@@ -41,7 +41,10 @@ Bignum Bignum::addnum(Bignum othernum){
 	
 	for(int i = 0; i < longer.nums.size(); i++){
 		if (i < shorter.nums.size()){
-			int temp = othernum.nums[i] + nums[i] + carry;
+
+			//cout << othernum.nums[i] << " " << nums[i] << carry << "\n";
+
+			int temp = longer.nums[i] + shorter.nums[i] + carry;
 
 			//cout << temp << "\n";
 
@@ -50,7 +53,7 @@ Bignum Bignum::addnum(Bignum othernum){
 			newnum.nums.push_back(temp);
 		}
 		else{
-			int temp = carry + othernum.nums[i];
+			int temp = carry + longer.nums[i];
 			carry = temp/10;
 			temp = temp % 10;
 			newnum.nums.push_back(temp);
